@@ -26,8 +26,13 @@ console.log('page', page);
     (entry) => '/' + entry.children[0].href.split('/').at(-1)
   );
   hrefs.forEach((href) => {
-    if (page === href) {
-      const index = hrefs.findIndex((href) => href === page);
+    console.log(page, '||', href);
+    if (page === '/') {
+      console.log('ciao');
+      entries[0].classList.add('active');
+    } else if (page.startsWith(href)) {
+      entries[0].classList.remove('active');
+      const index = hrefs.indexOf(href);
       entries[index].classList.add('active');
     }
   });
