@@ -8,9 +8,8 @@ interface Props {
 }
 
 const { image, title, tags }: Props = Astro.props;
-console.log(tags);
+
 const tagsArray = tags.split(',');
-console.log(tagsArray);
 ---
 
 <div class="card-container">

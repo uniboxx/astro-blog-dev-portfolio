@@ -1,11 +1,13 @@
 ---
-
+const { pathname } = Astro.url;
+const page = '/' + pathname.split('/').at(2);
+console.log('page', page);
 ---
 
 <div class="burger-container">
   <input type="checkbox" />
   <div class="menu-container">
-    <menu>
+    <menu id="menu">
       <li><a href="/astro-blog-dev-portfolio/">Home</a></li>
       <li><a href="/astro-blog-dev-portfolio/chi_sono">Chi sono</a></li>
       <li><a href="/astro-blog-dev-portfolio/portfolio">Portfolio</a></li>
@@ -18,14 +20,26 @@
   </div>
 </div>
 
+<script define:vars={{ page }}>
+  const entries = document.querySelectorAll('#menu li');
+  const hrefs = Array.from(entries).map(
+    (entry) => '/' + entry.children[0].href.split('/').at(-1)
+  );
+  hrefs.forEach((href) => {
+    if (page === href) {
+      const index = hrefs.findIndex((href) => href === page);
+      entries[index].classList.add('active');
+    }
+  });
+</script>
+
 <style>
   .menu-container {
     position: fixed;
-    top: 50px;
-    bottom: 50px;
+    top: 0;
     left: 0;
     width: 100svw;
-    height: calc(100svh -50px);
+    height: 100svh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,7 +47,7 @@
     color: #fff;
     transform: scale(0);
     opacity: 0;
-    z-index: 50;
+    z-index: 100;
     transition: 0.4s;
 
     menu {
@@ -42,11 +56,17 @@
       justify-content: center;
       list-style: none;
       gap: 2rem;
+      font-size: 1.7rem;
 
       li {
+        padding: 0 10px;
         a {
           color: inherit;
           text-decoration: none;
+        }
+
+        &.active {
+          border-bottom: 2px solid #fff;
         }
       }
     }
@@ -68,6 +88,11 @@
     z-index: 100;
     background-color: #ffffffcc;
     border-radius: 50%;
+
+    .burger {
+      background-color: inherit;
+      border-radius: inherit;
+    }
 
     & input[type='checkbox'] {
       position: absolute;

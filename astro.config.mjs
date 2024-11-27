@@ -7,5 +7,5 @@ import react from '@astrojs/react';
 export default defineConfig({
   integrations: [react()],
   site: 'https://uniboxx.github.io/',
-  base: '/astro-blog-dev-portfolio/',
+  base: '/astro-blog-dev-portfolio',
 });
