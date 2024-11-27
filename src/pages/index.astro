@@ -2,6 +2,10 @@
 import HomeNavbar from '@components/HomeNavbar.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ButtonLink from '@components/ButtonLink.astro';
+import CardBig from '@components/CardBig.astro';
+import placeholder1 from '@images/placeholder1.jpg';
+import placeholder2 from '@images/placeholder2.jpg';
+import placeholder3 from '@images/placeholder3.jpg';
 ---
 
 <BaseLayout title="Davide Pedrotti | Home">
@@ -16,4 +20,20 @@ import ButtonLink from '@components/ButtonLink.astro';
     ><a href="/astro-blog-dev-portfolio/chi_sono">Chi sono &rarr;</a
     ></ButtonLink
   >
+  <h2>Il mio lavoro</h2>
+  <CardBig
+    image={placeholder1}
+    title="Learn Web Development"
+    tags="Typescript,Svelte"
+  />
+  <CardBig
+    image={placeholder2}
+    title="Learn Web Development"
+    tags="Typescript, Astro"
+  />
+  <CardBig
+    image={placeholder3}
+    title="Learn Web Development"
+    tags="Typescript, React"
+  />
 </BaseLayout>
