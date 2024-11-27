@@ -13,3 +13,11 @@ body {
   flex-direction: column;
   min-height: 120svh;
 }
+
+h1 {
+  margin-bottom: 24px;
+}
+
+p {
+  line-height: 1.7em;
+}

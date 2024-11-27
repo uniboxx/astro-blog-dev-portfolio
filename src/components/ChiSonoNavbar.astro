@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets';
+import Burger from './Burger.astro';
+import me from '@images/davide_b_w.CATePR2S_cutted_3.jpg';
+---
+
+<nav>
+  <Image src={me} alt="me" />
+  <Burger />
+</nav>
+
+<style>
+  nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 48px;
+
+    img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 100%;
+    }
+  }
+  menu {
+    display: flex;
+    list-style: none;
+
+    li {
+      cursor: pointer;
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+</style>

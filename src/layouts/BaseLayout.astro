@@ -7,6 +7,7 @@ import HomeNavbar from '../components/HomeNavbar.astro';
 
 interface Props {
   title: string;
+  children: any;
 }
 const { title }: Props = Astro.props;
 ---
@@ -21,12 +22,13 @@ const { title }: Props = Astro.props;
   </head>
   <body>
     <div class="container">
-      <header>
-        <HomeNavbar />
-      </header>
       <slot />
     </div>
   </body>
 </html>
 
-<style></style>
+<style>
+  .container {
+    padding: 10px;
+  }
+</style>
