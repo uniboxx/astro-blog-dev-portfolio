@@ -1,7 +1,6 @@
 ---
 const { pathname } = Astro.url;
 const page = '/' + pathname.split('/').at(2);
-console.log('page', page);
 ---
 
 <div class="burger-container">
@@ -26,9 +25,7 @@ console.log('page', page);
     (entry) => '/' + entry.children[0].href.split('/').at(-1)
   );
   hrefs.forEach((href) => {
-    console.log(page, '||', href);
     if (page === '/') {
-      console.log('ciao');
       entries[0].classList.add('active');
     } else if (page.startsWith(href)) {
       entries[0].classList.remove('active');
