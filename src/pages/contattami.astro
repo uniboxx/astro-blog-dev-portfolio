@@ -1,0 +1,25 @@
+---
+import ButtonLink from '@components/ButtonLink.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contattami">
+  <h1>Contattami</h1>
+  <form action="#" method="POST">
+    <textarea name="" id="message" rows="10"></textarea>
+    <div class="invia">
+      <ButtonLink>Invia &rarr;</ButtonLink>
+    </div>
+  </form>
+</BaseLayout>
+
+<style>
+  textarea {
+    width: 100%;
+  }
+
+  .invia {
+    display: flex;
+    justify-content: end;
+  }
+</style>
