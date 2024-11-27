@@ -1,0 +1,26 @@
+<button>
+  <slot />
+</button>
+
+<style>
+  button {
+    display: block;
+    background-color: transparent;
+    padding: 4px 10px 1px;
+    color: #333;
+    border: none;
+    border-bottom: 2px solid #333;
+    border-radius: 0px;
+
+    &:hover {
+      background-color: #666;
+      color: #fff;
+      border-radius: 5px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+</style>

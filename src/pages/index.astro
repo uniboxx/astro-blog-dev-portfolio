@@ -1,7 +1,7 @@
 ---
 import HomeNavbar from '@components/HomeNavbar.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ButtonMain from '@components/Button-main.astro';
+import ButtonLink from '@components/ButtonLink.astro';
 ---
 
 <BaseLayout title="Davide Pedrotti | Home">
@@ -12,7 +12,8 @@ import ButtonMain from '@components/Button-main.astro';
   <h1>
     Sono uno sviluppatore che crea esperienze web intuitive e performanti.
   </h1>
-  <ButtonMain
-    ><a href="/astro-blog-dev-portfolio/chi_sono">Chi sono</a></ButtonMain
+  <ButtonLink
+    ><a href="/astro-blog-dev-portfolio/chi_sono">Chi sono &rarr;</a
+    ></ButtonLink
   >
 </BaseLayout>
