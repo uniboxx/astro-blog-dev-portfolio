@@ -1,0 +1,32 @@
+---
+import '../index.css';
+
+import { ViewTransitions } from 'astro:transitions';
+
+import HomeNavbar from '../components/HomeNavbar.astro';
+
+interface Props {
+  title: string;
+}
+const { title }: Props = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <ViewTransitions />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <HomeNavbar />
+      </header>
+      <slot />
+    </div>
+  </body>
+</html>
+
+<style></style>
