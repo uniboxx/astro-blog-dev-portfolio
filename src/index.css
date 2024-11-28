@@ -18,17 +18,30 @@ body {
 
 h1 {
   margin-bottom: 24px;
+  @media (min-width: 40rem) {
+    font-size: 3rem;
+  }
 }
 
 h2 {
   margin: 32px auto 16px;
+  @media (min-width: 40rem) {
+    font-size: 2rem;
+  }
 }
 h3 {
   margin: 0px auto;
+  @media (min-width: 40rem) {
+    font-size: 1.6rem;
+  }
 }
 
-p {
+p,
+button {
   line-height: 1.7em;
+  @media (min-width: 40rem) {
+    font-size: 1.2rem;
+  }
 }
 menu {
   list-style: none;
@@ -36,8 +49,11 @@ menu {
 
 li {
   cursor: pointer;
+  color: inherit;
+  font-size: inherit;
 }
 a {
   text-decoration: none;
   color: inherit;
+  font-size: inherit;
 }
