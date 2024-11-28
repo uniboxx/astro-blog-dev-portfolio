@@ -2,10 +2,15 @@
 import { Image } from 'astro:assets';
 import Burger from './Burger.astro';
 import me from '@images/davide_b_w.CATePR2S_cutted_3.jpg';
+
+interface Props {
+  image?: boolean;
+}
+const { image } = Astro.props;
 ---
 
 <nav>
-  <Image src={me} alt="me" />
+  {image && <Image src={me} alt="me" />}
   <Burger />
 </nav>
 

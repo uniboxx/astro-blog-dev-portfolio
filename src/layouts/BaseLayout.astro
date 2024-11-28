@@ -1,5 +1,5 @@
 ---
-import BaseNavbar from '@components/BaseNavbar.astro';
+import Navbar from '@components/Navbar.astro';
 import Footer from '@components/Footer.astro';
 import '../index.css';
 
@@ -25,7 +25,6 @@ const pageTitle = baseTitle + title;
   </head>
   <body>
     <div class="container">
-      <BaseNavbar />
       <slot />
       <Footer />
     </div>
@@ -34,7 +33,6 @@ const pageTitle = baseTitle + title;
 
 <style>
   .container {
-    min-height: 100svh;
     padding: 10px;
     display: flex;
     flex-direction: column;

@@ -1,9 +1,11 @@
 ---
 import ButtonLink from '@components/ButtonLink.astro';
+import Navbar from '@components/Navbar.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Contattami">
+  <Navbar image={true} />
   <h1>Contattami</h1>
   <form action="#" method="POST">
     <textarea name="" id="message" rows="10"></textarea>

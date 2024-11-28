@@ -1,8 +1,10 @@
 ---
-import ChiSonoLayout from '@layouts/ChiSonoLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
 ---
 
-<ChiSonoLayout title="Chi sono">
+<BaseLayout title="Chi sono">
+  <Navbar image={true} />
   <h1>Chi sono</h1>
   <p>
     Ciao, sono Davide, uno sviluppatore freelance specializzato in sviluppo web.
@@ -14,6 +16,6 @@ import ChiSonoLayout from '@layouts/ChiSonoLayout.astro';
     creare dei video corsi e tradurre concetti complessi in competenze attuabili
     che si possono applicare subito.
   </p>
-</ChiSonoLayout>
+</BaseLayout>
 
 <style></style>
