@@ -21,12 +21,19 @@ const { image } = Astro.props;
     position: absolute;
     top: 0;
     left: 0;
-
     width: 100%;
+
+    @media (min-width: 40rem) {
+      position: static;
+    }
   }
   nav {
     display: flex;
     justify-content: space-between;
+
+    @media (min-width: 40rem) {
+      flex-direction: column;
+    }
 
     img {
       width: 80px;
@@ -34,10 +41,18 @@ const { image } = Astro.props;
       padding: 10px 0 0 10px;
       object-fit: cover;
       border-radius: 100%;
+
+      @media (min-width: 40rem) {
+        order: 2;
+        display: none;
+      }
     }
   }
   menu {
     display: flex;
+    @media (min-width: 40rem) {
+      order: 1;
+    }
 
     li {
       cursor: pointer;

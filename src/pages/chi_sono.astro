@@ -1,12 +1,18 @@
 ---
+export const prerender = false;
 import Header from '@components/Header.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import me from '@images/davide_b_w.CATePR2S_cutted_3.jpg';
 ---
 
 <BaseLayout title="Chi sono">
   <Header image={true} />
-  <section class="chi-sono">
-    <h1>Chi sono</h1>
+  <section class="content chi-sono">
+    <div class="title">
+      <Image id="me" src={me} alt="me" />
+      <h1>Chi sono</h1>
+    </div>
     <p>
       Ciao, sono Davide, uno sviluppatore freelance specializzato in sviluppo
       web. Studiando da autodidatta, e spronato da una forte passione per la
@@ -19,3 +25,27 @@ import BaseLayout from '@layouts/BaseLayout.astro';
     </p>
   </section>
 </BaseLayout>
+
+<script>
+  const me = document.getElementById('me');
+  const image = document.documentElement.clientWidth >= 640;
+  if (image && me) {
+    me.style.display = 'block';
+  }
+</script>
+
+<style>
+  .title {
+    display: flex;
+    gap: 20px;
+    align-items: end;
+    padding-bottom: 32px;
+  }
+  img {
+    display: none;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 100%;
+  }
+</style>

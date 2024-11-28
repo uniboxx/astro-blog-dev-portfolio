@@ -12,6 +12,10 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+.content {
+  flex: 1;
+}
+
 h1 {
   margin-bottom: 24px;
 }

@@ -64,10 +64,35 @@ const page = '/' + pathname.split('/').at(2);
 
     li {
       padding: 0 10px;
+      @media (min-width: 40rem) {
+        padding: 0;
+      }
 
       &.active {
         border-bottom: 2px solid #fff;
+
+        @media (min-width: 40rem) {
+          border-bottom: 2px solid #333;
+        }
       }
+    }
+
+    @media (min-width: 40rem) {
+      position: static;
+      width: 100%;
+      height: unset;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: unset;
+      background-color: transparent;
+      color: #333;
+      transform: scale(1);
+      opacity: 1;
+      transition: 0.3s;
+      font-size: 1.4rem;
+      border-radius: unset;
     }
   }
 
@@ -168,22 +193,6 @@ const page = '/' + pathname.split('/').at(2);
     input[type='checkbox'],
     .burger {
       display: none;
-    }
-    menu {
-      position: static;
-      height: unset;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      gap: unset;
-      background-color: transparent;
-      color: #333;
-      transform: scale(1);
-      opacity: 1;
-      transition: 0.3s;
-      font-size: 1.4rem;
-      border-radius: unset;
     }
   }
 </style>
