@@ -28,16 +28,18 @@ import Header from '@components/Header.astro';
       title="Learn Web Development"
       tags="Typescript,Svelte"
     />
-    <CardBig
-      image={placeholder2}
-      title="Learn Web Development"
-      tags="Typescript, Astro"
-    />
-    <CardBig
-      image={placeholder3}
-      title="Learn Web Development"
-      tags="Typescript, React"
-    />
+    <div class="other-cards">
+      <CardBig
+        image={placeholder2}
+        title="Learn Web Development"
+        tags="Typescript, Astro"
+      />
+      <CardBig
+        image={placeholder3}
+        title="Learn Web Development"
+        tags="Typescript, React"
+      />
+    </div>
 
     <ButtonLink
       ><a href="/astro-blog-dev-portfolio/portfolio"
@@ -50,5 +52,13 @@ import Header from '@components/Header.astro';
 <style>
   h1 {
     margin-bottom: 0;
+  }
+  .other-cards {
+    @media (min-width: 40rem) {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      gap: 32px;
+    }
   }
 </style>
