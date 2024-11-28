@@ -1,9 +1,11 @@
 ---
-import Navbar from '@components/Navbar.astro';
+import Header from '@components/Header.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Blog">
-  <Navbar />
-  <h1>Blog</h1>
+  <Header />
+  <section class="blog">
+    <h1>Blog</h1>
+  </section>
 </BaseLayout>

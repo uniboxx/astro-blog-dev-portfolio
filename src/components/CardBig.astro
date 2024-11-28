@@ -31,7 +31,6 @@ const tagsArray = tags.split(',');
 
 <style>
   .card-container {
-    margin-bottom: 32px;
     img {
       width: 100%;
       height: 80%;
@@ -40,6 +39,7 @@ const tagsArray = tags.split(',');
     }
 
     .content {
+      padding-top: 8px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -60,5 +60,8 @@ const tagsArray = tags.split(',');
         color: #666;
       }
     }
+  }
+  .card-container:not(:last-of-type) {
+    margin-bottom: 32px;
   }
 </style>

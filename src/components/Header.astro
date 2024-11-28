@@ -9,20 +9,28 @@ interface Props {
 const { image } = Astro.props;
 ---
 
-<nav>
-  {image && <Image src={me} alt="me" />}
-  <Burger />
-</nav>
+<header>
+  <nav>
+    {image && <Image src={me} alt="me" />}
+    <Burger />
+  </nav>
+</header>
 
 <style>
+  header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    width: 100%;
+  }
   nav {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 48px;
 
     img {
-      width: 100px;
-      height: 100px;
+      width: 80px;
+      height: 80px;
       object-fit: cover;
       border-radius: 100%;
     }

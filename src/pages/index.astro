@@ -5,39 +5,50 @@ import CardBig from '@components/CardBig.astro';
 import placeholder1 from '@images/placeholder1.jpg';
 import placeholder2 from '@images/placeholder2.jpg';
 import placeholder3 from '@images/placeholder3.jpg';
-import ButtonMain from '@components/ButtonMain.astro';
-import Navbar from '@components/Navbar.astro';
+
+import Header from '@components/Header.astro';
 ---
 
 <BaseLayout title="Home">
-  <Navbar />
-  <p>Ciao! Sono Davide</p>
-  <h1>
-    Sono uno sviluppatore che crea esperienze web intuitive e performanti.
-  </h1>
-  <ButtonLink
-    ><a href="/astro-blog-dev-portfolio/chi_sono">Chi sono &rarr;</a
-    ></ButtonLink
-  >
-  <h2>Il mio lavoro</h2>
-  <CardBig
-    image={placeholder1}
-    title="Learn Web Development"
-    tags="Typescript,Svelte"
-  />
-  <CardBig
-    image={placeholder2}
-    title="Learn Web Development"
-    tags="Typescript, Astro"
-  />
-  <CardBig
-    image={placeholder3}
-    title="Learn Web Development"
-    tags="Typescript, React"
-  />
+  <Header />
+  <section class="chi-sono">
+    <p>Ciao! Sono Davide</p>
+    <h1>
+      Sono uno sviluppatore che crea esperienze web intuitive e performanti.
+    </h1>
+    <ButtonLink
+      ><a href="/astro-blog-dev-portfolio/chi_sono">Chi sono &rarr;</a
+      ></ButtonLink
+    >
+  </section>
+  <section class="portfolio">
+    <h2>Il mio lavoro</h2>
+    <CardBig
+      image={placeholder1}
+      title="Learn Web Development"
+      tags="Typescript,Svelte"
+    />
+    <CardBig
+      image={placeholder2}
+      title="Learn Web Development"
+      tags="Typescript, Astro"
+    />
+    <CardBig
+      image={placeholder3}
+      title="Learn Web Development"
+      tags="Typescript, React"
+    />
 
-  <ButtonMain
-    ><a href="/astro-blog-dev-portfolio/portfolio">Il mio Portfolio</a
-    ></ButtonMain
-  >
+    <ButtonLink
+      ><a href="/astro-blog-dev-portfolio/portfolio"
+        >Tutti i miei progetti &rarr;</a
+      ></ButtonLink
+    >
+  </section>
 </BaseLayout>
+
+<style>
+  h1 {
+    margin-bottom: 0;
+  }
+</style>
