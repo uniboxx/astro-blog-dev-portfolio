@@ -21,7 +21,7 @@ const { image } = Astro.props;
     position: absolute;
     top: 0;
     left: 0;
-    padding: 10px;
+
     width: 100%;
   }
   nav {
@@ -31,6 +31,7 @@ const { image } = Astro.props;
     img {
       width: 80px;
       height: 80px;
+      padding: 10px 0 0 10px;
       object-fit: cover;
       border-radius: 100%;
     }
@@ -40,6 +41,11 @@ const { image } = Astro.props;
 
     li {
       cursor: pointer;
+    }
+  }
+  @media (min-width: 40rem) {
+    header {
+      padding: 40px 0px;
     }
   }
 </style>

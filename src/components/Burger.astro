@@ -5,15 +5,14 @@ const page = '/' + pathname.split('/').at(2);
 
 <div class="main-container">
   <input type="checkbox" />
-  <div class="menu-container">
-    <menu id="menu">
-      <li><a href="/astro-blog-dev-portfolio">Home</a></li>
-      <li><a href="/astro-blog-dev-portfolio/chi_sono">Chi sono</a></li>
-      <li><a href="/astro-blog-dev-portfolio/portfolio">Portfolio</a></li>
-      <li><a href="/astro-blog-dev-portfolio/blog">Blog</a></li>
-      <li><a href="/astro-blog-dev-portfolio/contattami">Contattami</a></li>
-    </menu>
-  </div>
+  <menu id="menu">
+    <li><a href="/astro-blog-dev-portfolio">Home</a></li>
+    <li><a href="/astro-blog-dev-portfolio/chi_sono">Chi sono</a></li>
+    <li><a href="/astro-blog-dev-portfolio/portfolio">Portfolio</a></li>
+    <li><a href="/astro-blog-dev-portfolio/blog">Blog</a></li>
+    <li><a href="/astro-blog-dev-portfolio/contattami">Contattami</a></li>
+  </menu>
+
   <div class="burger">
     <div class="line-middle"></div>
   </div>
@@ -42,35 +41,32 @@ const page = '/' + pathname.split('/').at(2);
     --width: 30px;
     --space: 15px;
   }
-  .menu-container {
+
+  menu {
     position: fixed;
     top: 0;
     left: 0;
     width: 100svw;
     height: 100svh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 2rem;
     background-color: #333;
     color: #fff;
     transform: scale(0);
     opacity: 0;
     z-index: 50;
-    transition: 0.4s;
+    transition: 0.3s;
+    font-size: 1.7rem;
+    border-radius: 100%;
 
-    menu {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 2rem;
-      font-size: 1.7rem;
+    li {
+      padding: 0 10px;
 
-      li {
-        padding: 0 10px;
-
-        &.active {
-          border-bottom: 2px solid #fff;
-        }
+      &.active {
+        border-bottom: 2px solid #fff;
       }
     }
   }
@@ -139,9 +135,10 @@ const page = '/' + pathname.split('/').at(2);
     animation: toggleAfter 0.6s forwards ease-in-out;
   }
 
-  input:checked + .menu-container {
+  input:checked + menu {
     opacity: 0.9;
     transform: scale(1);
+    border-radius: unset;
   }
 
   @keyframes toggleBefore {
@@ -168,5 +165,25 @@ const page = '/' + pathname.split('/').at(2);
   }
 
   @media (min-width: 40rem) {
+    input[type='checkbox'],
+    .burger {
+      display: none;
+    }
+    menu {
+      position: static;
+      height: unset;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: unset;
+      background-color: transparent;
+      color: #333;
+      transform: scale(1);
+      opacity: 1;
+      transition: 0.3s;
+      font-size: 1.4rem;
+      border-radius: unset;
+    }
   }
 </style>
