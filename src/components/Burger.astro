@@ -3,11 +3,11 @@ const { pathname } = Astro.url;
 const page = '/' + pathname.split('/').at(2);
 ---
 
-<div class="burger-container">
+<div class="main-container">
   <input type="checkbox" />
   <div class="menu-container">
     <menu id="menu">
-      <li><a href="/astro-blog-dev-portfolio/">Home</a></li>
+      <li><a href="/astro-blog-dev-portfolio">Home</a></li>
       <li><a href="/astro-blog-dev-portfolio/chi_sono">Chi sono</a></li>
       <li><a href="/astro-blog-dev-portfolio/portfolio">Portfolio</a></li>
       <li><a href="/astro-blog-dev-portfolio/blog">Blog</a></li>
@@ -36,6 +36,12 @@ const page = '/' + pathname.split('/').at(2);
 </script>
 
 <style>
+  .main-container {
+    --line-height: 2px;
+    --height: 30px;
+    --width: 30px;
+    --space: 15px;
+  }
   .menu-container {
     position: fixed;
     top: 0;
@@ -49,23 +55,18 @@ const page = '/' + pathname.split('/').at(2);
     color: #fff;
     transform: scale(0);
     opacity: 0;
-    z-index: 100;
+    z-index: 50;
     transition: 0.4s;
 
     menu {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      list-style: none;
+      justify-content: space-between;
       gap: 2rem;
       font-size: 1.7rem;
 
       li {
         padding: 0 10px;
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
 
         &.active {
           border-bottom: 2px solid #fff;
@@ -73,16 +74,17 @@ const page = '/' + pathname.split('/').at(2);
       }
     }
   }
-  .burger-container {
-    --line-height: 2px;
-    --height: 30px;
-    --width: 30px;
-    --size: 15px;
+
+  .burger,
+  input[type='checkbox'] {
     position: fixed;
-    top: var(--size);
-    right: var(--size);
+    top: var(--space);
+    right: var(--space);
     width: var(--width);
     height: var(--height);
+  }
+
+  .burger {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -91,67 +93,57 @@ const page = '/' + pathname.split('/').at(2);
     background-color: #ffffffcc;
     border-radius: 50%;
 
-    .burger {
-      background-color: inherit;
-      border-radius: inherit;
+    .line-middle {
+      height: var(--line-height);
+      margin: 0 3px;
+      background-color: #333;
+      transition: 0.3s;
     }
 
-    & input[type='checkbox'] {
+    &::before,
+    &::after {
+      content: '';
       position: absolute;
-      width: 100%;
-      height: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      opacity: 0;
-      z-index: 110;
+      left: 6px;
+      right: 6px;
+      height: var(--line-height);
+      background-color: #333;
     }
 
-    & .burger {
-      .line-middle {
-        height: var(--line-height);
-        margin: 0 3px;
-        background-color: #333;
-        transition: 0.3s;
-      }
-
-      &::before,
-      &::after {
-        content: '';
-        position: absolute;
-        left: 6px;
-        right: 6px;
-        height: var(--line-height);
-        background-color: #333;
-      }
-      &::before {
-        top: 6px;
-      }
-      &::after {
-        bottom: 6px;
-      }
+    &::before {
+      top: 6px;
     }
-
-    & input:checked ~ .burger {
-      height: var(--height);
-      z-index: 101;
-    }
-
-    & input:checked ~ .burger > .line-middle {
-      opacity: 0;
-      height: var(--height);
-    }
-    & input:checked ~ .burger::before {
-      animation: toggleBefore 0.6s forwards ease-out;
-    }
-    & input:checked ~ .burger::after {
-      animation: toggleAfter 0.6s forwards ease-in-out;
-    }
-
-    & input:checked + .menu-container {
-      opacity: 0.9;
-      transform: scale(1);
+    &::after {
+      bottom: 6px;
     }
   }
+
+  input[type='checkbox'] {
+    opacity: 0;
+    z-index: 110;
+  }
+
+  input:checked ~ .burger {
+    height: var(--height);
+    z-index: 101;
+  }
+
+  input:checked ~ .burger > .line-middle {
+    opacity: 0;
+    height: var(--height);
+  }
+  input:checked ~ .burger::before {
+    animation: toggleBefore 0.6s forwards ease-out;
+  }
+  input:checked ~ .burger::after {
+    animation: toggleAfter 0.6s forwards ease-in-out;
+  }
+
+  input:checked + .menu-container {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+
   @keyframes toggleBefore {
     50% {
       top: 50%;
@@ -173,5 +165,8 @@ const page = '/' + pathname.split('/').at(2);
       bottom: 50%;
       transform: translateY(50%) rotate(-135deg);
     }
+  }
+
+  @media (min-width: 40rem) {
   }
 </style>

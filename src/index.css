@@ -13,7 +13,6 @@ body {
   display: flex;
   min-height: 100svh;
   flex-direction: column;
-  min-height: 120svh;
 }
 
 h1 {
@@ -29,4 +28,15 @@ h3 {
 
 p {
   line-height: 1.7em;
+}
+menu {
+  list-style: none;
+}
+
+li {
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: inherit;
 }

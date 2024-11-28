@@ -1,0 +1,56 @@
+---
+const prerender = false;
+const year = new Date().getFullYear();
+---
+
+<footer>
+  <div class="h-line"></div>
+  <menu>
+    <div class="policy">
+      <li><a href="#">Privacy Policy</a></li>
+      <p>|</p>
+      <li><a href="#">Cookie Policy</a></li>
+    </div>
+    <li>&copy;{year}</li>
+  </menu>
+</footer>
+
+<style>
+  footer {
+    margin: 32px auto;
+    .h-line {
+      width: 80%;
+      margin: 0px auto;
+      height: 1px;
+      background-color: #333;
+    }
+
+    menu {
+      padding: 32px 0;
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      gap: 32px;
+
+      .policy {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        li {
+          border-bottom: 1px solid #333;
+        }
+      }
+
+      li {
+        color: #666;
+        font-size: 0.8rem;
+        padding: 1px 2px;
+
+        &:last-child {
+          margin-left: auto;
+        }
+      }
+    }
+  }
+</style>
