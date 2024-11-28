@@ -19,9 +19,9 @@ const year = new Date().getFullYear();
   footer {
     margin: 64px auto 10px;
     @media (min-width: 40rem) {
-      margin: 64px 0;
+      margin: 128px 0 16px;
       width: 100%;
-      padding: 0 128px;
+      padding: 0 32px;
     }
     .h-line {
       width: 80%;
@@ -39,7 +39,6 @@ const year = new Date().getFullYear();
       gap: 32px;
       @media (min-width: 40rem) {
         justify-content: center;
-        gap: 32px;
       }
 
       .policy {
@@ -58,6 +57,9 @@ const year = new Date().getFullYear();
 
         &:last-child {
           margin-left: auto;
+          @media (min-width: 40rem) {
+            margin-left: unset;
+          }
         }
         @media (min-width: 40rem) {
           font-size: 1rem;
